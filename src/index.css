@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* macOS Sequoia Color Palette */
+    --sequoia-forest-dark: 160 45% 15%;
+    --sequoia-forest: 160 40% 25%;
+    --sequoia-moss: 150 35% 35%;
+    --sequoia-sky: 200 60% 45%;
+    --sequoia-mountain: 220 30% 20%;
+    
+    /* Glassmorphic UI */
+    --glass-bg: 0 0% 100% / 0.7;
+    --glass-border: 0 0% 100% / 0.18;
+    
+    /* macOS System Colors */
+    --macos-red: 0 85% 60%;
+    --macos-yellow: 45 100% 51%;
+    --macos-green: 120 73% 44%;
+    --macos-blue: 211 100% 50%;
+    
+    --background: 160 45% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 100% / 0.7;
+    --card-foreground: 160 45% 15%;
+
+    --popover: 0 0% 100% / 0.95;
+    --popover-foreground: 160 45% 15%;
+
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100% / 0.5;
+    --secondary-foreground: 160 45% 15%;
+
+    --muted: 0 0% 100% / 0.3;
+    --muted-foreground: 160 20% 40%;
+
+    --accent: 150 35% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100% / 0.18;
+    --input: 0 0% 100% / 0.2;
+    --ring: 211 100% 50%;
+
+    --radius: 0.75rem;
+    
+    /* macOS Specific */
+    --window-bg: 0 0% 100% / 0.85;
+    --window-header: 0 0% 96%;
+    --dock-bg: 0 0% 100% / 0.25;
+    --folder-bg: 200 30% 85%;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
