@@ -1,0 +1,1 @@
+npm install three postprocessing @react-three/fiber @react-three/postprocessing --legacy-peer-deps

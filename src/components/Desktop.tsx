@@ -7,7 +7,12 @@ import ProjectsContent from "./ProjectsContent";
 import ResumeContent from "./ResumeContent";
 import LinksContent from "./LinksContent";
 import { Folder, FileText, Link } from "lucide-react";
-import wallpaper from "@/assets/sequoia-wallpaper.jpg";
+
+// 1. REMOVE the wallpaper import
+// import wallpaper from "@/assets/sequoia-wallpaper.jpg";
+
+// 2. ADD the new Dither component import
+import Dither from "./Dither"; // Make sure this path is correct
 
 type FolderType = "projects" | "resume" | "links" | null;
 
@@ -50,9 +55,27 @@ const Desktop = () => {
 
   return (
     <div
-      className="relative h-screen w-full overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: `url(${wallpaper})` }}
+      // 3. Make sure the style prop and old bg classes are removed
+      className="relative h-screen w-full overflow-hidden"
     >
+      {/* 4. ADD the Dither component here.
+        It's first, so it's in the back (due to its z-0).
+        We pass in the props from your example.
+      */}
+      <Dither
+        waveColor={[0.5, 0.5, 0.5]}
+        disableAnimation={false}
+        enableMouseInteraction={true}
+        mouseRadius={0.3}
+        colorNum={4}
+        waveAmplitude={0.3}
+        waveFrequency={3}
+        waveSpeed={0.05}
+      />
+
+      {/* 5. All your other components remain unchanged. 
+        They will render on top of the Dither background.
+      */}
       <TopBar />
 
       {/* Desktop Icons */}
