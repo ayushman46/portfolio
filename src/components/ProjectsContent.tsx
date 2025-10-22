@@ -5,19 +5,19 @@ const ProjectsContent = () => {
   const projects = [
     {
       title: "IPL Match Predictor",
-      year: "2024",
-      description:
-        "ML pipeline to predict six likelihood using Random Forest and Flask with comprehensive data preprocessing.",
-      tags: ["Python", "scikit-learn", "Pandas", "SMOTE", "Flask"],
-      link: "#",
-    },
-    {
-      title: "Stock Market / Crypto Predictor",
       year: "2025",
       description:
-        "LLM ensemble for trading predictions and analysis with real-time data integration and visualization.",
-      tags: ["Python", "LLMs", "Matplotlib", "Automation"],
-      link: "#",
+        "ML pipeline to predict six likelihood using Random Forest and Flask with comprehensive data preprocessing .",
+      tags: ["Python", "scikit-learn", "Pandas", "FastAPI", "Flask","Random Forest"],
+      link: "https://github.com/ayushman46/IPL_api",
+    },
+    {
+      title: "Autoblogger with LLMs",
+      year: "2025",
+      description:
+        "LLM-powered tool that helps summarize tech videos into engaging blog posts with relevant visuals and code snippets along with its explanation.",
+      tags: ["Python", "LLMs", "OpenCV", "Automation"," OpenAI","LangChain","streamlit"],
+      link: "https://github.com/ayushman46/autoblog",
     },
     {
       title: "Inventory Management Automation",
