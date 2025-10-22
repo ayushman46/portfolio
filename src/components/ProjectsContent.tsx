@@ -20,20 +20,20 @@ const ProjectsContent = () => {
       link: "https://github.com/ayushman46/autoblog",
     },
     {
-      title: "Inventory Management Automation",
+      title: "financeGPT",
       year: "2024",
       description:
-        "Automated inventory tracking system with real-time alerts and reporting capabilities for efficient stock management.",
+        "An AI-first personal finance co-pilot designed to proactively manage your daily financial wants and needs. It automates bill splits, manages subscriptions, and uses cash-flow-aware AI to answer Can I afford this? in real-time.",
       tags: ["Python", "Automation", "SQL", "REST API"],
-      link: "#",
+      link: "https://github.com/ayushman46/fin-pal-",
     },
     {
-      title: "Email Responder Automation",
+      title: "Hate Speech Detection",
       year: "2024",
       description:
-        "Intelligent email response system using NLP to categorize and auto-respond to common inquiries with high accuracy.",
-      tags: ["Python", "NLP", "OpenAI", "Automation"],
-      link: "#",
+        "A python notebook that detects hate speech in text using NLP techniques and machine learning models, providing real-time analysis and feedback.",
+      tags: ["Python", "NLP", "jupyter", "scikit-learn", "Pandas"],
+      link: "https://github.com/ayushman46/Hate-Speech-Detection",
     },
     {
       title: "Data Visualization Dashboard",

@@ -20,7 +20,7 @@ const ProjectCard = ({ title, year, description, tags, link }: ProjectCardProps)
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
       }}
-      whileHover={{ y: -4 }}
+      
     >
       <div className="flex items-start justify-between mb-3">
         <div>

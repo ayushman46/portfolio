@@ -19,9 +19,10 @@ const FinderWindow = ({ title, onClose, children }: FinderWindowProps) => {
         onClick={onClose}
       />
 
-      {/* Window - Slightly right of desktop icons */}
+      {/* Window */}
       <motion.div
-        className="fixed left-44 top-24 z-50 w-[calc(100vw-12rem)] max-w-3xl max-h-[calc(100vh-10rem)]"
+        // 1. We're keeping the fixed height we set before. This is correct.
+        className="fixed left-44 top-24 z-50 w-[calc(100vw-12rem)] max-w-3xl h-[calc(100vh-10rem)]"
         initial={{ opacity: 0, scale: 0.95, x: -20 }}
         animate={{ opacity: 1, scale: 1, x: 0 }}
         exit={{ opacity: 0, scale: 0.95, x: -20 }}
@@ -52,8 +53,13 @@ const FinderWindow = ({ title, onClose, children }: FinderWindowProps) => {
             <div className="w-14" />
           </div>
 
-          {/* Window Content */}
-          <div className="flex-1 overflow-y-auto p-6">{children}</div>
+          {/* --- THIS IS THE FIX --- */}
+          {/* We added `min-h-0` to the className. */}
+          <div className="flex-1 overflow-y-auto p-6 min-h-0">
+            {children}
+          </div>
+          {/* --- END OF FIX --- */}
+          
         </div>
       </motion.div>
     </>
