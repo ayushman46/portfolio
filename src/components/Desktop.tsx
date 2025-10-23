@@ -1,18 +1,17 @@
+// src/components/Desktop.tsx
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import TopBar from "./TopBar";
-import DesktopFolder from "./DesktopFolder";
+// --- 1. CHANGE THE IMPORT ---
+import AnimatedFolder from "./AnimatedFolder"; // Use the new component
 import FinderWindow from "./FinderWindow";
 import ProjectsContent from "./ProjectsContent";
 import ResumeContent from "./ResumeContent";
 import LinksContent from "./LinksContent";
-import { Folder, FileText, Link } from "lucide-react";
+// --- You no longer need lucide-react icons for the folders ---
+// import { Folder, FileText, Link } from "lucide-react"; 
 
-// 1. REMOVE the wallpaper import
-// import wallpaper from "@/assets/sequoia-wallpaper.jpg";
-
-// 2. ADD the new Dither component import
-import Dither from "./Dither"; // Make sure this path is correct
+import Dither from "./Dither";
 
 type FolderType = "projects" | "resume" | "links" | null;
 
@@ -20,6 +19,8 @@ const Desktop = () => {
   const [openFolder, setOpenFolder] = useState<FolderType>(null);
 
   const handleFolderClick = (folder: FolderType) => {
+    // This now *only* opens the FinderWindow.
+    // The folder's open/close animation is handled inside AnimatedFolder.
     setOpenFolder(folder);
   };
 
@@ -28,6 +29,7 @@ const Desktop = () => {
   };
 
   const renderFolderContent = () => {
+    // ... (this function is correct)
     switch (openFolder) {
       case "projects":
         return <ProjectsContent />;
@@ -41,6 +43,7 @@ const Desktop = () => {
   };
 
   const getFolderTitle = () => {
+    // ... (this function is correct)
     switch (openFolder) {
       case "projects":
         return "Projects";
@@ -54,14 +57,7 @@ const Desktop = () => {
   };
 
   return (
-    <div
-      // 3. Make sure the style prop and old bg classes are removed
-      className="relative h-screen w-full overflow-hidden"
-    >
-      {/* 4. ADD the Dither component here.
-        It's first, so it's in the back (due to its z-0).
-        We pass in the props from your example.
-      */}
+    <div className="relative h-screen w-full overflow-hidden">
       <Dither
         waveColor={[0.5, 0.5, 0.5]}
         disableAnimation={false}
@@ -73,28 +69,38 @@ const Desktop = () => {
         waveSpeed={0.05}
       />
 
-      {/* 5. All your other components remain unchanged. 
-        They will render on top of the Dither background.
-      */}
       <TopBar />
 
-      {/* Desktop Icons */}
-      <div className="absolute left-8 top-24 flex flex-col gap-6">
-        <DesktopFolder
-          icon={Folder}
-          label="Projects"
-          onClick={() => handleFolderClick("projects")}
-        />
-        <DesktopFolder
-          icon={FileText}
+      {/* --- 2. REPLACE DesktopFolder with AnimatedFolder --- */}
+      <div className="absolute left-8 top-24 flex flex-col gap-6 z-10">
+        <AnimatedFolder
           label="Resume"
           onClick={() => handleFolderClick("resume")}
+          color="#A78BFA" // Soft purple
+          size={0.75}
         />
-        <DesktopFolder
-          icon={Link}
+        <AnimatedFolder
+          label="Projects"
+          onClick={() => handleFolderClick("projects")}
+          color="#A78BFA" // Soft purple
+          size={0.75}
+        />
+        <AnimatedFolder
           label="Links"
           onClick={() => handleFolderClick("links")}
+          color="#A78BFA" // Soft purple
+          size={0.75}
         />
+      </div>
+
+      {/* Name Text in the Middle */}
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center z-10 pointer-events-none">
+        <h1 className="text-6xl font-normal tracking-wider" style={{ fontFamily: '"Bitcount", monospace', fontWeight: 400 }}>
+          Ayushman Chakraborty
+        </h1>
+        <p className="text-xl mt-2" style={{ fontFamily: '"Bitcount", monospace', fontWeight: 400 }}>
+          portfolio
+        </p>
       </div>
 
       {/* Finder Windows */}

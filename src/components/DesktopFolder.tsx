@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+// src/components/DesktopFolder.tsx
+import React from "react";
 import { LucideIcon } from "lucide-react";
 
 interface DesktopFolderProps {
@@ -7,30 +8,30 @@ interface DesktopFolderProps {
   onClick: () => void;
 }
 
-const DesktopFolder = ({ icon: Icon, label, onClick }: DesktopFolderProps) => {
+const DesktopFolder: React.FC<DesktopFolderProps> = ({ icon: Icon, label, onClick }) => {
   return (
-    <motion.button
+    <button
       onClick={onClick}
-      className="flex flex-col items-center gap-2 group cursor-pointer"
-      whileHover={{ scale: 1.08, y: -4 }}
-      whileTap={{ scale: 0.95 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      className="flex flex-col items-center gap-2 group cursor-pointer w-[100px]"
     >
-      {/* iOS-style rounded square icon with glossy effect */}
-      <div className="relative w-20 h-20 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 rounded-[18px] shadow-macos-sm group-hover:shadow-macos transition-all duration-200 overflow-hidden">
-        {/* Glossy overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/10 to-transparent rounded-[18px]" />
-        {/* Icon */}
+      <div className="relative w-20 h-20 rounded-2xl shadow-lg group-hover:shadow-xl transition-all duration-200 overflow-hidden
+                      bg-gradient-to-br from-[#87A4F2] to-[#6B8AE1] border border-blue-400/30">
+        {/* Subtle inner shadow/depth for the icon block */}
+        <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+
+        {/* Icon itself */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <Icon className="w-10 h-10 text-white drop-shadow-lg" strokeWidth={2} />
+          <Icon 
+            className="w-10 h-10 text-white drop-shadow-sm" // White icon, subtle shadow
+            fill="currentColor" // Make the icon solid white
+            strokeWidth={0}      // Remove the stroke completely
+          />
         </div>
-        {/* Bottom shine */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white/10 to-transparent" />
       </div>
-      <span className="text-sm font-medium text-foreground drop-shadow-md">
+      <span className="text-sm font-medium text-white drop-shadow-md text-center select-none">
         {label}
       </span>
-    </motion.button>
+    </button>
   );
 };
 

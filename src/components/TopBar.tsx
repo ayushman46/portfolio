@@ -1,5 +1,5 @@
-import { Apple, Wifi, Battery, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Apple } from "lucide-react"; // 1. IMPORT THE APPLE ICON
 
 const TopBar = () => {
   const [time, setTime] = useState(new Date());
@@ -22,32 +22,39 @@ const TopBar = () => {
   const formatDate = (date: Date) => {
     return date.toLocaleDateString("en-US", {
       weekday: "short",
-      month: "short",
       day: "numeric",
+      month: "short",
     });
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 h-7 bg-black/20 backdrop-blur-xl border-b border-white/10 flex items-center justify-between px-4 text-foreground/90 text-sm">
-      <div className="flex items-center gap-4">
-        <Apple className="w-4 h-4" />
-        <span className="font-semibold">Finder</span>
-        <span>File</span>
-        <span>Edit</span>
-        <span>View</span>
-        <span>Go</span>
-        <span>Window</span>
-        <span>Help</span>
+    <div className="fixed top-0 left-0 right-0 z-50 h-7 px-4 bg-black/40 backdrop-blur-xl border-b border-white/10 flex items-center justify-between text-white text-xs font-medium">
+      {/* Left Section */}
+      <div className="flex items-center gap-5">
+        
+        {/* 2. REPLACE THE BAD <svg> WITH THE CLEAN LUCIDE ICON */}
+        <Apple
+          className="w-4 h-4 text-white"
+          fill="currentColor" // This is the key: it makes the icon solid white
+          strokeWidth={0}      // This removes any border
+        />
+        
+        <span className="font-semibold tracking-tight">Finder</span>
+        
+        <div className="flex items-center gap-5 ml-1">
+          <span className="font-normal hover:text-white/60 cursor-pointer transition">File</span>
+          <span className="font-normal hover:text-white/60 cursor-pointer transition">Edit</span>
+          <span className="font-normal hover:text-white/60 cursor-pointer transition">View</span>
+          <span className="font-normal hover:text-white/60 cursor-pointer transition">Go</span>
+          <span className="font-normal hover:text-white/60 cursor-pointer transition">Window</span>
+          <span className="font-normal hover:text-white/60 cursor-pointer transition">Help</span>
+        </div>
       </div>
 
-      <div className="flex items-center gap-4">
-        <span className="font-medium">
-          {formatDate(time)} {formatTime(time)}
-        </span>
-        <Wifi className="w-4 h-4" />
-        <Search className="w-4 h-4" />
-        <Battery className="w-4 h-4" />
-      </div>
+      {/* Right Section - Date and Time */}
+      <span className="font-normal">
+        {formatDate(time)} {formatTime(time)}
+      </span> 
     </div>
   );
 };

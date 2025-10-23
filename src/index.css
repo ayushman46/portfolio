@@ -1,3 +1,6 @@
+/* Import Bitcount Grid Single Regular 400 Font */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
