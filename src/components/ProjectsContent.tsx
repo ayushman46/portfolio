@@ -36,20 +36,20 @@ const ProjectsContent = () => {
       link: "https://github.com/ayushman46/Hate-Speech-Detection",
     },
     {
-      title: "Data Visualization Dashboard",
-      year: "2023",
+      title: "AI Data Analyst",
+      year: "2024",
       description:
-        "Interactive dashboard for business analytics with real-time data processing and customizable visualizations.",
-      tags: ["React", "D3.js", "TypeScript", "Node.js"],
-      link: "#",
+        "An AI-powered data analysis tool that automates data cleaning, visualization, and insights generation using LLMs and D3.js for interactive dashboards.",
+      tags: ["Streamlit", "Python", "Deepseek R1 API", "LLMs", "Data Visualization"],
+      link: "https://github.com/ayushman46/AI_Data_Analyst",
     },
     {
-      title: "AI Content Generator",
+      title: "Car Price Predictor",
       year: "2025",
       description:
-        "Advanced content generation tool leveraging GPT models for creating marketing copy, blog posts, and social media content.",
-      tags: ["Python", "OpenAI", "FastAPI", "React"],
-      link: "#",
+        "A machine learning model that predicts car prices based on various features and historical data.",
+      tags: ["Python", "Machine Learning", "Pandas", "Scikit-Learn"],
+      link: "https://github.com/ayushman46/Car-Price-Predictor",
     },
   ];
 
