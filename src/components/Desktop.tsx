@@ -8,10 +8,10 @@ import FinderWindow from "./FinderWindow";
 import ProjectsContent from "./ProjectsContent";
 import ResumeContent from "./ResumeContent";
 import LinksContent from "./LinksContent";
-// --- You no longer need lucide-react icons for the folders ---
-// import { Folder, FileText, Link } from "lucide-react"; 
-
+import AsciiText from "./AsciiText";
 import Dither from "./Dither";
+// --- You no longer need lucide-react icons for the folders ---
+// import { Folder, FileText, Link } from "lucide-react";
 
 type FolderType = "projects" | "resume" | "links" | null;
 
@@ -58,16 +58,18 @@ const Desktop = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      <Dither
-        waveColor={[0.5, 0.5, 0.5]}
-        disableAnimation={false}
-        enableMouseInteraction={true}
-        mouseRadius={0.3}
-        colorNum={4}
-        waveAmplitude={0.3}
-        waveFrequency={3}
-        waveSpeed={0.05}
-      />
+      <div className="absolute inset-0 -z-10">
+        <Dither
+          waveColor={[0.6, 0.6, 0.9]}
+          disableAnimation={false}
+          enableMouseInteraction={true}
+          mouseRadius={0}
+          colorNum={4}
+          waveAmplitude={0.36}
+          waveFrequency={0.4}
+          waveSpeed={0.03}
+        />
+      </div>
 
       <TopBar />
 
@@ -95,11 +97,25 @@ const Desktop = () => {
 
       {/* Name Text in the Middle */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center z-10 pointer-events-none">
-        <h1 className="text-6xl font-normal tracking-wider" style={{ fontFamily: '"Bitcount", monospace', fontWeight: 400 }}>
-          Ayushman Chakraborty
+        <h1
+          className="text-6xl font-medium tracking-tight"
+          style={{
+            fontFamily: '"IBM Plex Mono", monospace',
+            fontWeight: 500,
+            textShadow: "0 2px 12px rgba(0,0,0,0.65), 0 0 24px rgba(0,0,0,0.45)",
+          }}
+        >
+          <AsciiText text="Ayushman Chakraborty" />
         </h1>
-        <p className="text-xl mt-2" style={{ fontFamily: '"Bitcount", monospace', fontWeight: 400 }}>
-          portfolio
+        <p
+          className="text-xl mt-4 font-normal tracking-wider opacity-80"
+          style={{
+            fontFamily: '"Source Code Pro", monospace',
+            fontWeight: 400,
+            textShadow: "0 1px 8px rgba(0,0,0,0.6)",
+          }}
+        >
+          {'>'} portfolio_
         </p>
       </div>
 
