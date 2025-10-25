@@ -55,7 +55,7 @@ const FinderWindow = ({ title, onClose, children }: FinderWindowProps) => {
 
           {/* --- THIS IS THE FIX --- */}
           {/* We added `min-h-0` to the className. */}
-          <div className="flex-1 overflow-y-auto p-6 min-h-0">
+          <div className="flex-1 overflow-y-auto p-4 min-h-0">
             {children}
           </div>
           {/* --- END OF FIX --- */}
