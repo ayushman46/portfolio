@@ -24,6 +24,15 @@ const ResumeContent = () => {
     "OpenAI",
     "Node.js",
     "Git",
+    "Docker",
+    "Streamlit",
+    "LangChain",
+    "Deepseek R1 API",
+    "OpenCV",
+    "jupyter",
+    "YOLO",
+    "MediaPipe",
+    "SPIN Model",
   ];
 
   return (

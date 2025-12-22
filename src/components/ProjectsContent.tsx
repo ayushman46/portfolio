@@ -4,6 +4,14 @@ import ProjectCard from "./ProjectCard";
 const ProjectsContent = () => {
   const projects = [
     {
+      title: "3D Bowling Human Mesh Reconstruction",
+      year: "2025",
+      description:
+        "Computer vision project that reconstructs 3D human mesh from monocular videos of bowling extracting particular frame of the bowling action using OpenCV and MediaPipe.",
+      tags: ["Python", "Computer Vision", "YOLO", "MediaPipe", "SPIN Model"],
+      link: "https://github.com/ayushman46/bowling_analysis",
+    },
+    {
       title: "IPL Match Predictor",
       year: "2025",
       description:
