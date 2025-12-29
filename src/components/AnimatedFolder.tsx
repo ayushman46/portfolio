@@ -105,7 +105,7 @@ const AnimatedFolder = ({
       <div style={scaleStyle}>
         <div
           onClick={handleClick} // Added the click handler here
-          className="group relative transition-all duration-200 ease-in cursor-pointer"
+          className="group relative cursor-pointer"
           style={folderStyle as React.CSSProperties}
         >
           <div
@@ -128,7 +128,7 @@ const AnimatedFolder = ({
               return (
                 <div
                   key={i}
-                  className={`absolute z-20 bottom-[10%] left-1/2 transform -translate-x-1/2 translate-y-[10%] group-hover:translate-y-0 transition-all duration-300 ease-in-out ${sizeClasses}`}
+                  className={`absolute z-20 bottom-[10%] left-1/2 transform -translate-x-1/2 translate-y-[10%] ${sizeClasses}`}
                   style={{
                     backgroundColor: i === 0 ? paper1 : i === 1 ? paper2 : paper3,
                     borderRadius: "10px",
@@ -139,14 +139,14 @@ const AnimatedFolder = ({
               );
             })}
             <div
-              className="absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out group-hover:[transform:skew(15deg)_scaleY(0.6)]"
+              className="absolute z-30 w-full h-full origin-bottom"
               style={{
                 backgroundColor: color,
                 borderRadius: "5px 10px 10px 10px",
               }}
             ></div>
             <div
-              className="absolute z-30 w-full h-full origin-bottom transition-all duration-300 ease-in-out group-hover:[transform:skew(-15deg)_scaleY(0.6)]"
+              className="absolute z-30 w-full h-full origin-bottom"
               style={{
                 backgroundColor: color,
                 borderRadius: "5px 10px 10px 10px",

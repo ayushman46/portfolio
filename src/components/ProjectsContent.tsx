@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsContent = () => {
@@ -62,22 +61,11 @@ const ProjectsContent = () => {
   ];
 
   return (
-    <motion.div
-      className="grid grid-cols-1 md:grid-cols-2 gap-4"
-      initial="hidden"
-      animate="visible"
-      variants={{
-        visible: {
-          transition: {
-            staggerChildren: 0.1,
-          },
-        },
-      }}
-    >
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {projects.map((project, index) => (
         <ProjectCard key={index} {...project} />
       ))}
-    </motion.div>
+    </div>
   );
 };
 
