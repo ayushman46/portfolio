@@ -3,7 +3,7 @@ import { Download, FileText, ExternalLink } from "lucide-react";
 
 const ResumeContent = () => {
   // ✅ Make sure your file is inside /public
-  const resumePdfPath = "/Ayushman_Chakraborty (resume) _.pdf";
+  const resumePdfPath = "Ayushman_Chakraborty (resume)-2.pdf";
 
   const skills = [
     "Python",
@@ -33,6 +33,7 @@ const ResumeContent = () => {
     "YOLO",
     "MediaPipe",
     "SPIN Model",
+    "Random Forest"
   ];
 
   return (
